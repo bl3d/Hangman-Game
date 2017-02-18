@@ -4,18 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hangman Game</title> 
+  <title>Magic City Hangman</title> 
 
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">  
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
-  <script src="assets/javascript/game.js"></script>
-  
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">    
 </head>
 
 <body>
 
 
+  <div id="container">
 
+      <div id="audioToggle" class="playing">
+        <img id="audio_off" src="assets/images/audio_off.png">
+        <img id="audio_on" src="assets/images/audio_on.png">
+      </div>
+
+      <h1>MAGIC CITY HANGMAN</h1> 
+
+      <div id="mainContent">
+        <div id="wtgHolder" class="mainWidth">
+          <h3 class="sectionTitle">Guess the word!</h3>
+          <ul id="wordToGuess"></ul>
+          <p class="notice">
+            Use your keyboard to guess letters in the above word.<br>
+            (Words have to do with ATL and the Magic City club scene)
+          </p>        
+        </div>
+        
+        <div id="guessedHolder" class="mainWidth">
+          <h3 class="sectionTitle">Incorrect Letters</h3>                
+          <ul id="guessedLetters"></ul> 
+          <ul id="numGuessesHolder">
+            <li class="hudLabel">Remaining incorrect guesses:</li>
+            <li id="numGuessesRemaining"></li> 
+          </ul>               
+        </div>
+
+        <div id="mainHud" class="mainWidth">
+          <ul id="numLivesHolder" class="hud">
+            <li class="hudLabel">Lives Left:</li>
+            <li id="numLivesRemaining"></li>
+          </ul>      
+
+          <ul id="numWinsHolder" class="hud">
+            <li class="hudLabel">Wins:</li>
+            <li id="numWinsTotal"></li>
+          </ul>         
+        </div>         
+      </div>  
+
+      <div id="winnerMessage">
+        YOU WIN!<br>
+        MAKE IT RAIN!!!
+      </div>
+
+      <div id="loserMessage">
+        Awe man...<br>
+        Go on home.
+      </div>
+
+      <didv id="playAgain">Play Again?</didv>      
+
+  </div>
+
+
+
+  <div id="dollaBillsHolder">
+      <div id="billsAll"></div>
+  </div>  
+
+  <img id="bg" src="assets/images/mcHangMan_background.jpg" alt="magic city hangman background image, money on the floor, dancers">
+
+
+  <script src="assets/javascript/game.js"></script>
+
+  <!-- jQuery only used for 'make it rain' effect - main game is vanilla JS!! -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>  
+  <script src="assets/javascript/makeItRain.js"></script>
 
 </body>
 

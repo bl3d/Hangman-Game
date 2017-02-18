@@ -50,7 +50,7 @@
 
 	   init: function(){ 
 
-	   		//pick first word to begin game
+	   		//set defaults and pick first word to begin game
 	   		this.numGuessesRemaining.innerHTML = this.numGuesses;
 	   		this.numWinsTotal.innerHTML = this.numWins;
 	   		this.newLevel();
@@ -70,8 +70,7 @@
 
 	   		var arrLength = this.wordsArray.length;
 
-	   		if (arrLength > 0) {
-		   		// console.log('array number 3 is: ' + this.wordsArray[3]);
+	   		if (arrLength > 0) { 
 		   		var word = this.wordsArray[Math.floor(Math.random() * arrLength)];
 		   		this.splitWord(word);
 
@@ -93,11 +92,10 @@
 	   		this.set_blankWord(); 
 	   },
 
-	   set_blankWord: function(){
-	   		// console.log(this.wordByChar);
+	   set_blankWord: function(){ 
 	   		var eachLetter = '';
 
-	   		//for reach character in array, add blank element 
+	   		//for each character in array, add blank element 
 			for (var i = 0, len = this.wordByChar.length; i < len; i++) {	
 			  eachLetter += '<li><span>&nbsp;</span></li>';		 
 			};	   			   		
@@ -134,12 +132,10 @@
 					var thisLi = this.wordToGuess.getElementsByTagName("LI")[i];
 					thisLi.getElementsByTagName("span")[0].innerHTML = key;
 					thisLi.className = "check";
-					matchCount++;
 				};	 
 			};
 
 			//check if user has filled in all blanks
-			var matchCount = 0;
 			var slides = document.getElementsByClassName("check");
 			if (slides.length === this.wordByChar.length) {
 
